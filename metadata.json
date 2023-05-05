@@ -1,0 +1,285 @@
+{
+    "ANDAMAN AND NICOBAR ISLANDS": {
+        "code": 35,
+        "name": "ANDAMAN AND NICOBAR ISLANDS",
+        "sub_nodes": {
+            "NICOBARS": {
+                "code": 603,
+                "name": "NICOBARS",
+                "sub_nodes": {
+                    "CAMPBELL BAY": {
+                        "code": 6498,
+                        "name": "CAMPBELL BAY",
+                        "sub_nodes": {
+                            "7 Km. Farm": {
+                                "code": 259493,
+                                "name": "7 Km. Farm",
+                                "sub_nodes": {}
+                            },
+                            "Afra Bay": {
+                                "code": 259504,
+                                "name": "Afra Bay",
+                                "sub_nodes": {}
+                            },
+                            "CAMPBELL BAY": {
+                                "code": 234529,
+                                "name": "CAMPBELL BAY",
+                                "sub_nodes": {}
+                            },
+                            "GOVINDNAGAR": {
+                                "code": 234530,
+                                "name": "GOVINDNAGAR",
+                                "sub_nodes": {}
+                            },
+                            "Lanaya": {
+                                "code": 259506,
+                                "name": "Lanaya",
+                                "sub_nodes": {}
+                            },
+                            "LAXMINAGAR": {
+                                "code": 234531,
+                                "name": "LAXMINAGAR",
+                                "sub_nodes": {}
+                            },
+                            "Makhahu (Makachua)": {
+                                "code": 259447,
+                                "name": "Makhahu (Makachua)",
+                                "sub_nodes": {}
+                            },
+                            "Patisang": {
+                                "code": 259507,
+                                "name": "Patisang",
+                                "sub_nodes": {}
+                            },
+                            "Pattia": {
+                                "code": 259465,
+                                "name": "Pattia",
+                                "sub_nodes": {}
+                            },
+                            "Pitayo": {
+                                "code": 259508,
+                                "name": "Pitayo",
+                                "sub_nodes": {}
+                            },
+                            "Pulloullo": {
+                                "code": 259453,
+                                "name": "Pulloullo",
+                                "sub_nodes": {}
+                            },
+                            "Pulobha": {
+                                "code": 259455,
+                                "name": "Pulobha",
+                                "sub_nodes": {}
+                            },
+                            "Pulopanja": {
+                                "code": 259457,
+                                "name": "Pulopanja",
+                                "sub_nodes": {}
+                            }
+                        }
+                    },
+                    "CAR NICOBAR": {
+                        "code": 6499,
+                        "name": "CAR NICOBAR",
+                        "sub_nodes": {}
+                    },
+                    "NANCOWRIE": {
+                        "code": 6500,
+                        "name": "NANCOWRIE",
+                        "sub_nodes": {}
+                    }
+                }
+            },
+            "NORTH AND MIDDLE ANDAMAN": {
+                "code": 632,
+                "name": "NORTH AND MIDDLE ANDAMAN",
+                "sub_nodes": {}
+            },
+            "SOUTH ANDAMANS": {
+                "code": 602,
+                "name": "SOUTH ANDAMANS",
+                "sub_nodes": {}
+            }
+        }
+    },
+    "ANDHRA PRADESH": {
+        "code": 28,
+        "name": "ANDHRA PRADESH",
+        "sub_nodes": {}
+    },
+    "ARUNACHAL PRADESH": {
+        "code": 12,
+        "name": "ARUNACHAL PRADESH",
+        "sub_nodes": {}
+    },
+    "ASSAM": {
+        "code": 18,
+        "name": "ASSAM",
+        "sub_nodes": {}
+    },
+    "BIHAR": {
+        "code": 10,
+        "name": "BIHAR",
+        "sub_nodes": {}
+    },
+    "CHANDIGARH": {
+        "code": 4,
+        "name": "CHANDIGARH",
+        "sub_nodes": {}
+    },
+    "CHHATTISGARH": {
+        "code": 22,
+        "name": "CHHATTISGARH",
+        "sub_nodes": {}
+    },
+    "DADRA AND NAGAR HAVELI": {
+        "code": 26,
+        "name": "DADRA AND NAGAR HAVELI",
+        "sub_nodes": {}
+    },
+    "DAMAN AND DIU": {
+        "code": 25,
+        "name": "DAMAN AND DIU",
+        "sub_nodes": {}
+    },
+    "DELHI": {
+        "code": 7,
+        "name": "DELHI",
+        "sub_nodes": {}
+    },
+    "GOA": {
+        "code": 30,
+        "name": "GOA",
+        "sub_nodes": {}
+    },
+    "GUJARAT": {
+        "code": 24,
+        "name": "GUJARAT",
+        "sub_nodes": {}
+    },
+    "HARYANA": {
+        "code": 6,
+        "name": "HARYANA",
+        "sub_nodes": {}
+    },
+    "HIMACHAL PRADESH": {
+        "code": 2,
+        "name": "HIMACHAL PRADESH",
+        "sub_nodes": {}
+    },
+    "JAMMU AND KASHMIR": {
+        "code": 1,
+        "name": "JAMMU AND KASHMIR",
+        "sub_nodes": {}
+    },
+    "JHARKHAND": {
+        "code": 20,
+        "name": "JHARKHAND",
+        "sub_nodes": {}
+    },
+    "KARNATAKA": {
+        "code": 29,
+        "name": "KARNATAKA",
+        "sub_nodes": {}
+    },
+    "KERALA": {
+        "code": 32,
+        "name": "KERALA",
+        "sub_nodes": {}
+    },
+    "LADAKH": {
+        "code": 37,
+        "name": "LADAKH",
+        "sub_nodes": {}
+    },
+    "LAKSHADWEEP": {
+        "code": 31,
+        "name": "LAKSHADWEEP",
+        "sub_nodes": {}
+    },
+    "MADHYA PRADESH": {
+        "code": 23,
+        "name": "MADHYA PRADESH",
+        "sub_nodes": {}
+    },
+    "MAHARASHTRA": {
+        "code": 27,
+        "name": "MAHARASHTRA",
+        "sub_nodes": {}
+    },
+    "MANIPUR": {
+        "code": 14,
+        "name": "MANIPUR",
+        "sub_nodes": {}
+    },
+    "MEGHALAYA": {
+        "code": 17,
+        "name": "MEGHALAYA",
+        "sub_nodes": {}
+    },
+    "MIZORAM": {
+        "code": 15,
+        "name": "MIZORAM",
+        "sub_nodes": {}
+    },
+    "NAGALAND": {
+        "code": 13,
+        "name": "NAGALAND",
+        "sub_nodes": {}
+    },
+    "ODISHA": {
+        "code": 21,
+        "name": "ODISHA",
+        "sub_nodes": {}
+    },
+    "PUDUCHERRY": {
+        "code": 34,
+        "name": "PUDUCHERRY",
+        "sub_nodes": {}
+    },
+    "PUNJAB": {
+        "code": 3,
+        "name": "PUNJAB",
+        "sub_nodes": {}
+    },
+    "RAJASTHAN": {
+        "code": 8,
+        "name": "RAJASTHAN",
+        "sub_nodes": {}
+    },
+    "SIKKIM": {
+        "code": 11,
+        "name": "SIKKIM",
+        "sub_nodes": {}
+    },
+    "TAMIL NADU": {
+        "code": 33,
+        "name": "TAMIL NADU",
+        "sub_nodes": {}
+    },
+    "TELANGANA": {
+        "code": 36,
+        "name": "TELANGANA",
+        "sub_nodes": {}
+    },
+    "TRIPURA": {
+        "code": 16,
+        "name": "TRIPURA",
+        "sub_nodes": {}
+    },
+    "UTTARAKHAND": {
+        "code": 5,
+        "name": "UTTARAKHAND",
+        "sub_nodes": {}
+    },
+    "UTTAR PRADESH": {
+        "code": 9,
+        "name": "UTTAR PRADESH",
+        "sub_nodes": {}
+    },
+    "WEST BENGAL": {
+        "code": 19,
+        "name": "WEST BENGAL",
+        "sub_nodes": {}
+    }
+}
