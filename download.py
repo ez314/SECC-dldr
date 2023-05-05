@@ -62,6 +62,10 @@ def get_gp_metadata(state_code, district_code, block_code) -> dict[str, Node]:
     j: list[dict[str, str]] = r.json()
     return {entry['gp_name']: Node(entry['gp_code'], entry['gp_name']) for entry in j}
 
+def save_metadata(metadata, filename):
+    j = {name: node.to_json() for name, node in metadata.items()}
+    json.dump(j, open(filename, 'w'))
+
 def populate_metadata():
     # continue from existing save if one exists
     if pathlib.Path(METADATA_FILE).is_file():
@@ -80,14 +84,14 @@ def populate_metadata():
                 for block_node in district_node.sub_nodes.values():
                     if not block_node.sub_nodes:
                         block_node.sub_nodes = get_gp_metadata(state_node.code, district_node.code, block_node.code)
-        j = {name: node.to_json() for name, node in metadata.items()}
-        # kind of dangerous, overwrites old metadata file
-        json.dump(j, open(METADATA_FILE, 'w'))
+        save_metadata(METADATA_FILE)
     except KeyboardInterrupt:
-        print('Execution interrupted. Saving current state to metadata file.')
-        j = {name: node.to_json() for name, node in metadata.items()}
-        # kind of dangerous, overwrites old metadata file
-        json.dump(j, open(METADATA_FILE, 'w'))
+        print('Execution interrupted manually. Saving current state to metadata file.')
+        save_metadata(METADATA_FILE)
+    except Exception:
+        filename = 'errored-' + METADATA_FILE
+        print('Execution encountered error. Saving current state to ' + filename)
+        save_metadata(filename)
 
     return metadata
 
