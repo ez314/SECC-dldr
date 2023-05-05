@@ -1,8 +1,10 @@
 from __future__ import annotations
 import json
 import requests
+import pathlib
 
 VERBOSE = True
+METADATA_FILE = 'metadata.json'
 
 class Node:
     code: int
@@ -14,6 +16,15 @@ class Node:
         self.name = name
         self.sub_nodes = {}
 
+    @staticmethod
+    def from_json(j):
+        n = Node(j['code'], j['name'])
+        if j['sub_nodes']:
+            n.sub_nodes = {k: Node.from_json(v) for k, v in j['sub_nodes'].items()}
+        else:
+            n.sub_nodes = {}
+        return n
+
     def to_json(self):
         return {
             "code": int(self.code),
@@ -23,9 +34,9 @@ class Node:
                 for k, v in self.sub_nodes.items()
             }
         }
+    
 
-
-def initialize_states(state_names_file) -> dict[str, Node]:
+def init_skeleton(state_names_file) -> dict[str, Node]:
     with open(state_names_file, 'r') as f:
         contents: dict[str, str] = json.load(f)
     return {name: Node(code, name) for code, name in contents.items()}
@@ -51,25 +62,38 @@ def get_gp_metadata(state_code, district_code, block_code) -> dict[str, Node]:
     j: list[dict[str, str]] = r.json()
     return {entry['gp_name']: Node(entry['gp_code'], entry['gp_name']) for entry in j}
 
-def populate_metadata(metadata: dict[str, Node]):
+def populate_metadata():
+    # continue from existing save if one exists
+    if pathlib.Path(METADATA_FILE).is_file():
+        metadata_json = json.load(open(METADATA_FILE, 'r'))
+        metadata = {k: Node.from_json(v) for k, v in metadata_json.items()}
+    else:
+        metadata = init_skeleton("state_names.json")
+
     try:
         for state_node in metadata.values():
-            state_node.sub_nodes = get_district_metadata(state_node.code)
+            if not state_node.sub_nodes:
+                state_node.sub_nodes = get_district_metadata(state_node.code)
             for district_node in state_node.sub_nodes.values():
-                district_node.sub_nodes = get_block_metadata(state_node.code, district_node.code)
+                if not district_node.sub_nodes:
+                    district_node.sub_nodes = get_block_metadata(state_node.code, district_node.code)
                 for block_node in district_node.sub_nodes.values():
-                    block_node.sub_nodes = get_gp_metadata(state_node.code, district_node.code, block_node.code)
-    except KeyboardInterrupt:
-        print('Execution interrupted. Saving current state to metadata.json')
-    finally:
+                    if not block_node.sub_nodes:
+                        block_node.sub_nodes = get_gp_metadata(state_node.code, district_node.code, block_node.code)
         j = {name: node.to_json() for name, node in metadata.items()}
-        json.dump(j, open('metadata.json', 'w'))
+        # kind of dangerous, overwrites old metadata file
+        json.dump(j, open(METADATA_FILE, 'w'))
+    except KeyboardInterrupt:
+        print('Execution interrupted. Saving current state to metadata file.')
+        j = {name: node.to_json() for name, node in metadata.items()}
+        # kind of dangerous, overwrites old metadata file
+        json.dump(j, open(METADATA_FILE, 'w'))
 
     return metadata
 
 def main():
-    metadata = initialize_states("state_names.json")
-    populate_metadata(metadata)
+    metadata = populate_metadata()
+    print('loaded all metadata')
 
 if __name__ == '__main__':
     main()
