@@ -2,6 +2,7 @@ from __future__ import annotations
 import json
 import requests
 import pathlib
+import sys
 
 VERBOSE = True
 METADATA_FILE = 'metadata.json'
@@ -84,14 +85,18 @@ def populate_metadata():
                 for block_node in district_node.sub_nodes.values():
                     if not block_node.sub_nodes:
                         block_node.sub_nodes = get_gp_metadata(state_node.code, district_node.code, block_node.code)
-        save_metadata(METADATA_FILE)
+        save_metadata(metadata, METADATA_FILE)
+        print('finished')
     except KeyboardInterrupt:
         print('Execution interrupted manually. Saving current state to metadata file.')
-        save_metadata(METADATA_FILE)
-    except Exception:
+        save_metadata(metadata, METADATA_FILE)
+        sys.exit()
+    except Exception as e:
         filename = 'errored-' + METADATA_FILE
-        print('Execution encountered error. Saving current state to ' + filename)
-        save_metadata(filename)
+        print('Execution encountered error.', e)
+        print('Saving current state to ' + filename)
+        save_metadata(metadata, filename)
+        sys.exit()
 
     return metadata
 
